@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LAMP STACK</title>
+        <title>CS248 LAMP Server</title>
         <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
@@ -12,10 +12,10 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                        LAMP STACK
+                        Web &amp; Internet Programming: Local LAMP Server
                     </h1>
                     <h2 class="subtitle">
-                        Your local development environment
+                        This is a self-contained LAMP setup running in a docker container that behaves exactly like an external server would.
                     </h2>
                 </div>
             </div>
@@ -32,18 +32,13 @@
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
-                                    $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
-
-                                    /* check connection */
-                                    if (mysqli_connect_errno()) {
-                                        printf("MySQL connection failed: %s", mysqli_connect_error());
-                                    } else {
-                                        /* print server version */
+                                    try {
+                                        $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
                                         printf("MySQL Server %s", mysqli_get_server_info($link));
+                                        mysqli_close($link);
+                                    } catch (e) {
+                                        printf("MySQL connection failed: %s", e.getMessage());
                                     }
-
-                                    /* close connection */
-                                    mysqli_close($link);
                                     ?>
                                 </li>
                             </ul>
@@ -67,7 +62,7 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                    <strong><a href="https://www.sprintcube.com" target="_blank">SprintCube</a></strong><br>
+                    This container is based on one from <strong><a href="https://www.sprintcube.com" target="_blank">SprintCube</a></strong><br>
                     The source code is released under the
                     <a href="https://github.com/sprintcube/docker-compose-lamp/blob/master/LICENSE" target="_blank">
                         MIT license</a>.

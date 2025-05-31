@@ -1,0 +1,37 @@
+/* Place any manually written CSS here */
+.subtitle {
+  color: #a8a8a8;
+  font-size: 1.5rem;
+}
+
+.boyColor {
+  background-color: rgb(153, 204, 255);
+}
+
+.girlColor {
+  background-color: pink;
+}
+
+th {
+  border: 2px solid gray;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: lightgray;
+  padding: 5px;
+}
+
+td {
+  border: 2px solid gray;
+  text-align: right;
+  vertical-align: bottom;
+  padding: 5px;
+}
+
+tfoot td {
+  text-align: left;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
