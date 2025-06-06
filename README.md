@@ -7,7 +7,7 @@ This repository provides a basic LAMP stack environment built using Docker Compo
 - PHP (v8.2)
 - MySQL (via MariaDB v10.6)
 
-It also come with phpMyAdmin preinstalled to help you manage your databases.
+It also comes with phpMyAdmin preinstalled to help you manage your databases.
 
 ## Setup Docker
 If you are on Windows, it is recommended to install Windows Subsystem for Linux v2 (WSL2) to improve performance:
@@ -25,7 +25,7 @@ On all systems, you need to have the basic Docker containerization tool installe
 ## Installation
 To use this LAMP container, follow these steps:
 - Clone this repository on your local computer (or just download a zip archive)
-- Rename cs404.env to .env (this file contains environment variables for docker-compose)
+- Rename cs248.env to .env (this file contains environment variables for docker-compose)
 - Run `docker-compose up -d` from the root of the project
 - Visit `http://localhost:3000` in your browser
 
